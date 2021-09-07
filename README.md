@@ -47,3 +47,4 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>
 # Note
 
 This code is English Version of [Anonymous Chat Bot Indo](https://github.com/kenkansaja/Chatbot2)
+- fork from [here](https://github.com/Achu2234/AnonymousChatBot)
