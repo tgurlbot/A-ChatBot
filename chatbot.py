@@ -101,7 +101,7 @@ def reg_change(message):
                          "👨 - _YOUR♥️BIO_ - 👩\n\n*=> Name :* " + str(user.name) + "\n*=> Age :* " + str(user.age)+" Year" + "\n*=> Gender :* " + str(user.sex) + "\n*=> Couple Type :* " + str(user.change)+ "\n*=> Register On :\n        >Date :* "+str(date1[0])+"\n    *    >Time :* "+str(date1[1])+" IST", parse_mode="markdown")
         markup = types.ReplyKeyboardMarkup(one_time_keyboard=True, resize_keyboard=True)
         markup.add('Yes ✔️', 'Not ✖️')
-        bot.send_message(message.from_user.id, "`Want to change the data above??`\n *Yes[to Change]     No[Done]*",parse_mode="markdown", reply_markup=markup)
+        bot.send_message(message.from_user.id, "`Want to change the data above??`\n\n *Yes [to Change]     No [Done]*",parse_mode="markdown", reply_markup=markup)
         bot.register_next_step_handler(message, reg_accept)
     else:
         bot.send_message(message.from_user.id, 'You can only click on the keyboard')
@@ -118,7 +118,7 @@ def reg_accept(message):
             if not check_user(user_id=message.from_user.id)[0]:
                 user = user_dict[message.from_user.id]
                 reg_db(user_id=user.user_id, name=user.name, old=user.age, gender=user.sex, change=user.change)
-                bot.send_message(message.from_user.id, "_Succeed...✅\nYour Account Has Been Registered on {BOT_NAME}!_", parse_mode="markdown")
+                bot.send_message(message.from_user.id, "_Succeed...✅\nYour Account Has Been Registered!!!!_", parse_mode="markdown")
             else:
                 if message.from_user.id in user_dict.keys():
                     user = user_dict[message.from_user.id]
