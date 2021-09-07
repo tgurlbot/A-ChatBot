@@ -96,7 +96,7 @@ def reg_change(message):
     if (message.text == u'Man👦') or (message.text == u'Woman👩🏻') or (message.text == u'Man and woman👀'):
         user = user_dict[message.from_user.id]
         user.change = message.text
-        date1 = datetime.fromtimestamp(message.date, tz=pytz.timezone("asia/jakarta")).strftime("%d/%m/%Y %H:%M:%S").split()
+        date1 = datetime.fromtimestamp(message.date, tz=pytz.timezone("asia/kolkata")).strftime("%d/%m/%Y %H:%M:%S").split()
         bot.send_message(message.from_user.id,
                          "👨 - _YOUR♥️BIO_ - 👩\n\n*=> Name :* " + str(user.name) + "\n*=> Age :* " + str(user.age)+" Year" + "\n*=> Gender :* " + str(user.sex) + "\n*=> Couple Type :* " + str(user.change)+ "\n*=> Register On :\n        >Date :* "+str(date1[0])+"\n    *    >Time :* "+str(date1[1])+" WIB", parse_mode="markdown")
         markup = types.ReplyKeyboardMarkup(one_time_keyboard=True, resize_keyboard=True)
